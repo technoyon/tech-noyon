@@ -107,8 +107,9 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [userEmail, setUserEmail] = useState(""); 
-    // const url = "https://ntech-backend.onrender.com";
-  const url = "http://localhost:4000";
+  
+  // const url = "http://localhost:4000";
+  const url = "https://tech-noyon3.onrender.com";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 
