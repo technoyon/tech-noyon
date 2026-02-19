@@ -1,0 +1,122 @@
+.invoice-page {
+  padding: 20px;
+  color: #fff;
+    overflow-x: auto;
+}
+.invoice-container {
+  max-width: 500px;
+  margin: 0 auto;
+  min-width: 500px;
+}
+.invoice-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.invoice-actions button {
+  padding: 8px 12px;
+  background: #2d7cff;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.invoice-sheet {
+  background: #fff;
+  color: #000;
+  padding: 18px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.invoice-date small {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Order ID centered in border box */
+.order-id-box {
+  border: 1px solid #d1d0d0;
+  padding: 10px 14px;
+  margin: 10px auto 18px;
+  display: block;
+  text-align: center;
+  max-width: 640px;
+  border-radius: 6px;
+  background: #fafafa;
+}
+.order-id-box small {
+  font-size: 12px;
+  color: #333;
+}
+.invoice-customer {
+  margin-bottom: 18px;
+  margin-top: 8px;
+}
+.invoice-customer h4 {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.invoice-customer p {
+  margin: 7px 0;
+  line-height: 1.35;
+  color: #222;
+}
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+}
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #d6d4d4;
+  padding: 8px;
+  text-align: left;
+}
+.invoice-totals {
+  max-width: 220px;
+  margin-left: auto;
+  border: 1px solid #d6d4d4;
+  padding: 10px 6px;
+}
+.totals-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 4px 0;
+}
+.totals-row p:last-child {
+  text-align: right;
+}
+.total-amount {
+  font-weight: 700;
+}
+.invoice-note {
+  margin-top: 12px;
+}
+.invoice-note textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 80px;
+  box-sizing: border-box;
+  display: block;
+  resize: vertical;
+  padding: 8px;
+  margin-top: 4px;
+}
+
+/* Prevent table or long words from forcing wider layout */
+.invoice-table,
+.invoice-table td,
+.invoice-table th {
+  box-sizing: border-box;
+  word-break: break-word;
+}
