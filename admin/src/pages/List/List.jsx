@@ -299,9 +299,13 @@ import { useEffect, useState } from 'react';
 import './List.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { url } from "../../assets/assets"; 
 
 // const List = ({ url = 'https://ntech-backend.onrender.com' }) => {
-const List = ({ url = 'http://localhost:4000' }) => {
+// const List = ({ url = 'http://localhost:4000' }) => {
+
+// ✅ Updated to automatically use live or local URL
+const List = ({ url: propUrl = url }) => {
 
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -318,10 +322,13 @@ const List = ({ url = 'http://localhost:4000' }) => {
   // 🔍 Search state (added)
   const [searchQuery, setSearchQuery] = useState('');
 
+  // ✅ Determine the final URL to use (live or local)
+  const finalUrl = import.meta.env.VITE_API_URL || propUrl || "http://localhost:4000";
+
   const fetchList = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${url}/api/food/list`);
+      const response = await axios.get(`${finalUrl}/api/food/list`);
       if (response.data && response.data.success) {
         setList(response.data.data || []);
       } else {
@@ -352,7 +359,7 @@ const List = ({ url = 'http://localhost:4000' }) => {
     // Added confirmation alert
     if (window.confirm("Are you sure you want to remove this item?")) {
       try {
-        const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
+        const response = await axios.post(`${finalUrl}/api/food/remove`, { id: foodId });
         if (response.data && response.data.success) {
           toast.success(response.data.message || 'Item removed');
           await fetchList();
@@ -400,7 +407,7 @@ const List = ({ url = 'http://localhost:4000' }) => {
     }
 
     try {
-      const response = await axios.post(`${url}/api/food/update`, data);
+      const response = await axios.post(`${finalUrl}/api/food/update`, data);
       if (response.data.success) {
         toast.success(response.data.message);
         await fetchList();
@@ -454,7 +461,7 @@ const List = ({ url = 'http://localhost:4000' }) => {
               <p className="cell-index">{index + 1}</p>
 
               <img
-                src={item.image.startsWith("http") ? item.image : `${url}/images/${item.image}`}
+                src={item.image.startsWith("http") ? item.image : `${finalUrl}/images/${item.image}`}
                 alt={`${item.name} image`}
               />
 

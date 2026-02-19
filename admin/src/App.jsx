@@ -34,6 +34,10 @@
 export default App */
 }
 
+
+
+
+
 // src/App.jsx
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -65,9 +69,7 @@ import Logout from "./pages/Auth/Logout";
 
 
 
-
-// for fixed the siebar
-
+// for fixed the sidebar
 const AdminLayout = ({ children }) => {
   const { user } = useAuth();
   const isAllowed = !!user && ALLOWED_EMAILS.includes(user.email || "");
@@ -81,9 +83,7 @@ const AdminLayout = ({ children }) => {
     </div>
   );
 };
-
-// for fixed the siebar
-
+// for fixed the sidebar
 
 
 
@@ -104,9 +104,10 @@ const RequireAllowed = ({ children }) => {
 
 const App = () => {
 
-
-    // const url = "https://ntech-backend.onrender.com";
-  const url = "http://localhost:4000";
+  // ✅ Automatically use live or local URL
+  // const url = "https://ntech-backend.onrender.com";
+  // const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
   return (
     <AuthProvider>
@@ -118,7 +119,6 @@ const App = () => {
         <Route path="/logout" element={<Logout />} />
 
         {/* Admin protected routes */}
-
         <Route
           path="/dashboard"
           element={
@@ -179,3 +179,4 @@ const App = () => {
 };
 
 export default App;
+
