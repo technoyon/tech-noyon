@@ -1,3 +1,4 @@
+upload in render
 yes invoice 
 frontend, backend + admin + admin log in-out-acc-cre suceesfully workred + all functions worked + responsive - 2025
 perfect last stays
@@ -183,20 +184,20 @@ if create problem:
 
 i deploy this project in render. then new url for backend is "https://heat-and-treat-task-backend.onrender.com".
 
-
-frontend, backend deploy perfectly. admin also deploy but for the admin the data does not come from the backend
-
-
-fix this.
+for using this backend url with current local url
 
 
 
-admin 
-.env te VITE_API_URL=""
+Admin:
 
-assets.js ( both url together export)
+(asstes.js
 List.jsx
-App.jsx
+App.jsx)   both url used
 
-Front-end
-StoreContext.js ( both url together)
+
+Frontend:
+
+StoreContext.js both url used
+
+all have .env file.
+.env (front,back,admin)
