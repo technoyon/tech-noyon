@@ -79,7 +79,8 @@
 
 .explore-menu-list-item p{
     background: #000000;
-    border: 2px solid #505050;
+    /* border: 2px solid #505050; */
+    border: 2px solid #575757;
     border-radius: 6px;
     padding: 10px;
 }
