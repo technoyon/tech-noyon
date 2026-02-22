@@ -346,6 +346,76 @@ select.edit-input {
 .save-btn { background: #00d9ff; color: black; }
 .cancel-btn { background: #444; color: white; }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.order-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.position {
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+}
+
+.order-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-btn {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.order-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.order-btn.up:hover { background: #e0ffe0; }
+.order-btn.down:hover { background: #fff0e0; }
+
+.list-table-format.title {
+  grid-template-columns: 120px 100px 2fr 1fr 100px 180px; /* adjusted for order column */
+}
+
+.list-table-format {
+  grid-template-columns: 120px 100px 2fr 1fr 100px 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---------------------------------------------------
    RESPONSIVE DESIGN (sm, md, lg, xl)
 --------------------------------------------------- */
