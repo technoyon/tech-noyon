@@ -8,6 +8,7 @@ const FoodDisplay = ({category}) => {
   return (
     <div className='food-display' id='food-display'>
         <h2>Latest <span>Devices</span></h2>
+        <h2>And <span>Services</span></h2>
         <div className='food-display-list'>
           {food_list.map((item,index)=>{
            if (category==="All" || category===item.category) {
