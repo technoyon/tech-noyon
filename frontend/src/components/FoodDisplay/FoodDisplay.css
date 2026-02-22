@@ -12,6 +12,11 @@
     color: #ffffff;
 }
 
+.food-display h2 .and{
+    color: #00d9ff;
+    font-weight: 600;
+}
+
 .food-display-list{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
